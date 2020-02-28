@@ -31,11 +31,31 @@ const trails = [
 }];
 
 
-// WIll need to remove or update later
+// Will need to remove or update later
 const posts = [
   {
-    title: 'test',
+    title: 'Lands End 1',
+    description: 'test '
+  },
+  {
+    title: 'Lands End 2',
     description: 'test test'
+  },
+  {
+    title: 'Fort Funston 1',
+    description: 'test One'
+  },
+  {
+    title: 'Fort Funston 2',
+    description: 'test Two'
+  },
+  {
+    title: 'Mori Point 1',
+    description: 'test Dog'
+  },
+  {
+    title: 'Mori Point 2',
+    description: 'test Cat'
   }
 ]
 
@@ -43,3 +63,12 @@ module.exports = {
   trails,
   posts
 }
+
+const allPosts = [];
+db.Post.create(posts, (err, newPosts) => {
+  if (err) console.log(`ERROR`);
+  for (let i = 0; i < posts.length; i++) {
+    allPosts.push(newPosts);
+    //console.log(allPosts);
+  }
+})

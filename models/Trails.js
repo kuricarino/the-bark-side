@@ -6,7 +6,7 @@ const TrailSchema = new mongoose.Schema({
     difficulty: String,
     routeType: String,
     description: String,
-    image: String
+    image: String,
 });
 
 module.exports = mongoose.model('Trail', TrailSchema);
