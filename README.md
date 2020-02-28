@@ -1,5 +1,5 @@
 # Project-1-Collab-SF-Trails
-
+***NorCal Coastal Trails***
 
 **App Name**
 
