@@ -4,7 +4,7 @@ const app = express();
 const bodyParser = require('body-parser');
 
 // PORT and connect mongoose
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 5000;
 const mongoose = require('mongoose');
 
 const DB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/trails-api';
@@ -42,23 +42,56 @@ const seed = require('./seed');
 //     res.send('<h1>Trails</h1>');
 // });
 
-// POSTS
-// GET
-app.get('/api/posts', (req, res) => {
-    db.Post.find({}, (err, allPosts) => {
-        if (err) res.status(400).json({status: 400, error: `Something went wrong`});
-        return res.json(allPosts);
+// * POSTS * //
+// GET: Posts -- tested
+// app.get('/api/posts', (req, res) => {
+//     db.Post.find({}, (err, allPosts) => {
+//         if (err) res.status(400).json({status: 400, error: `Something went wrong.`});
+//         return res.json(allPosts);
+//     });
+// });
+
+// * TRAILS * //
+// GET: Trails -- tested
+app.get('/api/trails', (req, res) => {
+    db.Trail.find({}, (err, allTrails) => {
+        if (err) res.status(400).json({status: 400, error: `Something went wrong.`});
+        return res.json(allTrails);
     });
 });
 
+// SHOW: Post -- tested
+app.get('/api/posts/:postId', (req, res) => {
+    db.Post.findById(req.params.postId, (err, showPost) => {
+        if (err) res.status(400).json({status: 400, error: `Something went wrong.`});
+        return res.json(showPost)
+    })
+});
 
-// SHOW
 
-// CREATE
+// CREATE: New Post
+// app.post('/api/posts', (req, res) => {
+//     db.Post.create(req.body, (err, newPost) => {
+//         if (err) res.status(400).json({status: 400, error: `Something went wrong.`});
+//         // are we finding trail by id and embedding new post here?
+//         db.Trail.findById(req.params.)
+//     })
+// })
 
-// UPDATE
 
-// DELETE
+// UPDATE: Post
+// app.post('/api/posts/:postId', (req, res) => {
+//     db.Post.findByIdAndUpdate(req.params.postId, req.body, {new: true}, (err, updatedPost) => {
+//         if (err) res.status(400).json({status: 400, error: `Something went wrong`});
+
+//         res.json(updatedPost);
+//     });
+// });
+
+// DELETE: Post
+// app.delete('/api/posts/:postId', (req, res) => {
+//     db.Post.
+// })
 
 
 // ** ERROR ENDPOINTS ** //

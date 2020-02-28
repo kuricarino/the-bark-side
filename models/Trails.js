@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Post = require('./Posts');
 
 const TrailSchema = new mongoose.Schema({
     name: String,
@@ -7,6 +8,7 @@ const TrailSchema = new mongoose.Schema({
     routeType: String,
     description: String,
     image: String,
+    posts: [Post.schema]
 });
 
 module.exports = mongoose.model('Trail', TrailSchema);
