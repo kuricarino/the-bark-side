@@ -72,7 +72,7 @@ app.get('/api/trails/:trailId/posts', (req, res) => {
 
 
 // CREATE: New Post
-app.post('/api/trails/:trailId/posts', (req, res) => {
+app.post('/api/trails/:trailId/post', (req, res) => {
 //     db.Post.create(req.body, (err, newPost) => {
 //         if (err) res.status(400).json({status: 400, error: `Something went wrong.`});
         
@@ -89,15 +89,15 @@ db.Trail.deleteMany({}, (err, delTrails) => {
     if (err) console.log('can"t delete trails', err);
     // console.log('deleted all trails', delTrails);
   
-    db.Trail.create(trails, (err, newTrails) => {
+    db.Trail.create({},(err, newTrails) => {
       if (err) console.log(`can't create new trails`);
       // console.log(newTrails);
   
-        db.Post.create(posts, (err, savedPost) => {
+        db.Post.create({}, (err, savedPost) => {
           if (err) console.log(err);
           newTrails.posts.push(savedPost);
           newTrails.save();
-        //   console.log(newTrails[i]);
+        console.log(newTrails);
         })
       })
     })

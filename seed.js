@@ -81,7 +81,7 @@ db.Trail.deleteMany({}, (err, delTrails) => {
         if (err) console.log(err);
         newTrails[i].posts.push(savedPost);
         newTrails[i].save();
-        console.log(newTrails[i]);
+        //console.log(newTrails[i]);
       })
   
     }
