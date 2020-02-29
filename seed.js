@@ -63,24 +63,3 @@ module.exports = {
   trails,
   posts
 }
-
-// const allPosts = [];
-// db.Post.create(posts, (err, newPosts) => {
-//   if (err) console.log(`ERROR`);
-//   for (let i = 0; i < posts.length; i++) {
-//     allPosts.push(newPosts);
-//     //console.log(allPosts);
-//   }
-// })
-
-const allTrails = [];
-db.Trail.create(trails, (err, newTrails) => {
-  if (err) console.log(`ERROR`);
-  for (let i = 0; i < trails.length; i++) {
-    allTrails.push(newTrails);
-    // allTrails[i].posts.update(
-    //   {_id: }
-    // )
-
-  }
-})
