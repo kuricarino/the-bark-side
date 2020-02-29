@@ -42,23 +42,25 @@ const seed = require('./seed');
 //     res.send('<h1>Trails</h1>');
 // });
 
-// * POSTS * //
-// GET: Posts -- tested
-// app.get('/api/posts', (req, res) => {
-//     db.Post.find({}, (err, allPosts) => {
-//         if (err) res.status(400).json({status: 400, error: `Something went wrong.`});
-//         return res.json(allPosts);
-//     });
-// });
 
 // * TRAILS * //
 // GET: Trails -- tested
-app.get('/api/trails', (req, res) => {
-    db.Trail.find({}, (err, allTrails) => {
+// app.get('/api/trails', (req, res) => {
+//     db.Trail.find({}, (err, allTrails) => {
+//         if (err) res.status(400).json({status: 400, error: `Something went wrong.`});
+//         return res.json(allTrails);
+//     });
+// });
+
+// * POSTS * //
+// GET: Posts -- tested
+app.get('/api/trails/:trailId/posts', (req, res) => {
+    db.Post.find({}, (err, allPosts) => {
         if (err) res.status(400).json({status: 400, error: `Something went wrong.`});
-        return res.json(allTrails);
+        return res.json(allPosts);
     });
 });
+
 
 // SHOW: Post -- tested
 // app.get('/api/posts/:postId', (req, res) => {
@@ -70,17 +72,40 @@ app.get('/api/trails', (req, res) => {
 
 
 // CREATE: New Post
-// app.post('/api/posts', (req, res) => {
+app.post('/api/trails/:trailId/posts', (req, res) => {
 //     db.Post.create(req.body, (err, newPost) => {
 //         if (err) res.status(400).json({status: 400, error: `Something went wrong.`});
-//         // are we finding trail by id and embedding new post here?
-//         db.Trail.findById(req.params.)
+        
+//         db.Trail.findById(req.params.trailId);
+//         const trail = req.params.trailId;
+//         trail.posts.push(newPost);
+//         //trail.posts.push(newPost);
+//         newPost.save();
 //     })
-// })
+// });
+
+
+db.Trail.deleteMany({}, (err, delTrails) => {
+    if (err) console.log('can"t delete trails', err);
+    // console.log('deleted all trails', delTrails);
+  
+    db.Trail.create(trails, (err, newTrails) => {
+      if (err) console.log(`can't create new trails`);
+      // console.log(newTrails);
+  
+        db.Post.create(posts, (err, savedPost) => {
+          if (err) console.log(err);
+          newTrails.posts.push(savedPost);
+          newTrails.save();
+        //   console.log(newTrails[i]);
+        })
+      })
+    })
+});
 
 
 // UPDATE: Post
-// app.post('/api/posts/:postId', (req, res) => {
+// app.post('/api/trails/:trailId/posts/:postId', (req, res) => {
 //     db.Post.findByIdAndUpdate(req.params.postId, req.body, {new: true}, (err, updatedPost) => {
 //         if (err) res.status(400).json({status: 400, error: `Something went wrong`});
 
