@@ -61,12 +61,12 @@ app.get('/api/trails', (req, res) => {
 });
 
 // SHOW: Post -- tested
-app.get('/api/posts/:postId', (req, res) => {
-    db.Post.findById(req.params.postId, (err, showPost) => {
-        if (err) res.status(400).json({status: 400, error: `Something went wrong.`});
-        return res.json(showPost)
-    })
-});
+// app.get('/api/posts/:postId', (req, res) => {
+//     db.Post.findById(req.params.postId, (err, showPost) => {
+//         if (err) res.status(400).json({status: 400, error: `Something went wrong.`});
+//         return res.json(showPost)
+//     })
+// });
 
 
 // CREATE: New Post
