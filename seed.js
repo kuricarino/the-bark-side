@@ -4,6 +4,7 @@ const db = require('./models');
 const trails = [
 {
   name: 'Fort Funston Trail',
+  nickname: 'ff',
   distance: '2 miles',
   difficulty: 'Easy',
   routeType: 'Loop',
@@ -13,6 +14,7 @@ const trails = [
 },
 {
   name: 'Lands End Trail',
+  nickname: 'le',
   distance: '3.4 miles',
   difficulty: 'Moderate',
   routeType: 'Loop',
@@ -22,6 +24,7 @@ const trails = [
 },
 {
   name: 'Mori Point and Sweeney Ridge Loop Trail',
+  nickname: 'mp',
   distance: '9.4 miles',
   difficulty: 'Hard',
   routeType: 'Loop',
@@ -73,14 +76,79 @@ module.exports = {
 //   }
 // })
 
-const allTrails = [];
-db.Trail.create(trails, (err, newTrails) => {
-  if (err) console.log(`ERROR`);
-  for (let i = 0; i < trails.length; i++) {
-    allTrails.push(newTrails);
-    // allTrails[i].posts.update(
-    //   {_id: }
-    // )
+// const allTrails = [];
 
-  }
+// Clearing all previous trails so we can load trails from database
+db.Trail.deleteMany({}, (err, delTrails) => {
+  if (err) console.log('can"t delete trails', err);
+  // console.log('deleted all trails', delTrails);
+
+  db.Trail.create(trails, (err, newTrails) => {
+    if (err) console.log(`can't create new trails`);
+    // console.log(newTrails);
+
+    for (let i = 0; i < newTrails.length; i++) {
+      db.Post.create(posts[0], (err, savedPost) => {
+        if (err) console.log(err);
+        newTrails[i].posts.push(savedPost);
+        newTrails[i].save();
+        console.log(newTrails[i]);
+      })
+  
+    }
+  })
 })
+
+    // }
+    //  Get trail, add post, save trail
+    // for (let i = 0; i < posts.length; i += 2) {
+    //   allTrails.posts.save((err, savedPosts) => {
+    //     if (err) console.log('Can"t save posts', err);
+    //     console.log(savedPosts);
+    //   })
+    // }
+
+    // })
+  
+
+
+
+//  FOR CREATING NEW POSTS - NOT COMPLETE
+
+    // db.Post.deleteMany({}, (err, delPosts) => {
+    //   if (err) console.log('can"t delete posts', err);
+    //   console.log(delPosts);
+    //   trails.forEach(postData => {
+    //     const post = new db.Post({
+    //       title: postData.title,
+    //       description: postData.description},
+     
+    //       post.save((err, savedPost) => {
+    //         if (err) console.log('can"t save posts', err);
+    //         console.log(savedPost);
+    //       })
+    //       )
+    //     ;
+      
+    //   })
+    // })
+
+
+
+    // db.Post.deleteMany({}, (err, posts) => {
+    //   if (err) console.log('can"t delete posts', err);
+    //   console.log('deleted all posts', posts);
+
+
+      // db.Trail.posts.forEach(postData => {
+      //   const post = new db.Post ({
+      //     title: postData.title,
+      //     description: postData.description
+      //   });
+
+      //   db.Trail.findOne({nickname: {$in: 'le'}}, (err, savedPost) => {
+      //     if (err) console.log('error', err);
+      //     trails.post.push(post[0], post[1]);
+      //     console.log(savedPost);
+      //   })
+        
