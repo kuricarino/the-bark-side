@@ -37,19 +37,19 @@ const trails = [
 // Will need to remove or update later
 const posts = [
   {
-    title: 'Lands End 1',
-    description: 'test '
-  },
-  {
-    title: 'Lands End 2',
-    description: 'test test'
-  },
-  {
     title: 'Fort Funston 1',
-    description: 'test One'
+    description: 'test'
   },
   {
     title: 'Fort Funston 2',
+    description: 'test test'
+  },
+  {
+    title: 'Lands End 1',
+    description: 'test One'
+  },
+  {
+    title: 'Lands End 2',
     description: 'test Two'
   },
   {
@@ -67,17 +67,6 @@ module.exports = {
   posts
 }
 
-// const allPosts = [];
-// db.Post.create(posts, (err, newPosts) => {
-//   if (err) console.log(`ERROR`);
-//   for (let i = 0; i < posts.length; i++) {
-//     allPosts.push(newPosts);
-//     //console.log(allPosts);
-//   }
-// })
-
-// const allTrails = [];
-
 // Clearing all previous trails so we can load trails from database
 db.Trail.deleteMany({}, (err, delTrails) => {
   if (err) console.log('can"t delete trails', err);
@@ -87,17 +76,18 @@ db.Trail.deleteMany({}, (err, delTrails) => {
     if (err) console.log(`can't create new trails`);
     // console.log(newTrails);
 
-    for (let i = 0; i < newTrails.length; i++) {
-      db.Post.create(posts[0], (err, savedPost) => {
+    for (let i = 0; i < newTrails.length; i ++) {
+      db.Post.create(posts[i], (err, savedPost) => {
         if (err) console.log(err);
         newTrails[i].posts.push(savedPost);
         newTrails[i].save();
-        console.log(newTrails[i]);
+        //console.log(newTrails[i]);
       })
   
     }
   })
 })
+// above function currently pushes only one random/non-corresponding post into the trail
 
     // }
     //  Get trail, add post, save trail
@@ -151,4 +141,3 @@ db.Trail.deleteMany({}, (err, delTrails) => {
       //     trails.post.push(post[0], post[1]);
       //     console.log(savedPost);
       //   })
-        
