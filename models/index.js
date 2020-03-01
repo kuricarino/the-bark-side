@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-// const seed = require('../seed');
+mongoose.connect("mongodb://localhost:27017/trails-api", {useNewUrlParser: true, useFindAndModify: false});
 
 module.exports = {
     Trail: require('./Trails'),

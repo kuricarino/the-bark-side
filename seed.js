@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+// mongoose.connect("mongodb://localhost:27017/trails-api", {useNewUrlParser: true, useFindAndModify: false});
 const db = require('./models');
 
 const trails = [
@@ -35,73 +36,60 @@ const trails = [
 
 
 // Will need to remove or update later
+
+// db.createCollection("counters");
+// db.counters.insert({_id:"pid",sequence_value:0});
+
+// function getNextSequenceValue(sequenceName){
+//     let sequenceDocument = db.counters.findAndModify({
+//        query:{_id: sequenceName },
+//        update: {$inc:{sequence_value:1}},
+//        new:true
+//     });
+//     return sequenceDocument.sequence_value;
+//  }
+
+//  db.Post.insert({
+//    _id: getNextSequenceValue("pid")
+//  });
+
+
 const posts = [
   {
     title: 'Fort Funston 1',
-    description: 'test'
-  },
-  {
-    title: 'Fort Funston 2',
-    description: 'test test'
+    description: 'test ff',
   },
   {
     title: 'Lands End 1',
-    description: 'test One'
-  },
-  {
-    title: 'Lands End 2',
-    description: 'test Two'
+    description: 'test le',
   },
   {
     title: 'Mori Point 1',
-    description: 'test Dog'
-  },
-  {
-    title: 'Mori Point 2',
-    description: 'test Cat'
+    description: 'test mp',
   }
 ]
-
-module.exports = {
-  trails,
-  posts
-}
 
 // Clearing all previous trails so we can load trails from database
 db.Trail.deleteMany({}, (err, delTrails) => {
   if (err) console.log('can"t delete trails', err);
-  // console.log('deleted all trails', delTrails);
-
   db.Trail.create(trails, (err, newTrails) => {
     if (err) console.log(`can't create new trails`);
-    // console.log(newTrails);
-
+    // console.log(newTrails);  -- DELETE LATER
     for (let i = 0; i < newTrails.length; i ++) {
-      db.Post.create(posts[i], (err, savedPost) => {
-        if (err) console.log(err);
-        newTrails[i].posts.push(savedPost);
-        newTrails[i].save();
-        //console.log(newTrails[i]);
-      })
-  
-    }
-  })
-})
-// above function currently pushes only one random/non-corresponding post into the trail
+        db.Post.create(posts[i], (err, savedPost) => {
+          if (err) console.log(err);
+          newTrails[i].posts.push(savedPost);
+          newTrails[i].save();
+          // console.log(newTrails[i]);  -- DELETE LATER
+        });
+    };
+  });
+});
 
-    // }
-    //  Get trail, add post, save trail
-    // for (let i = 0; i < posts.length; i += 2) {
-    //   allTrails.posts.save((err, savedPosts) => {
-    //     if (err) console.log('Can"t save posts', err);
-    //     console.log(savedPosts);
-    //   })
-    // }
-
-    // })
-  
-
-
+// module.exports = {
+//   trails,
+//   posts
+// }
 
 //  FOR CREATING NEW POSTS - NOT COMPLETE
 
@@ -122,22 +110,3 @@ db.Trail.deleteMany({}, (err, delTrails) => {
       
     //   })
     // })
-
-
-
-    // db.Post.deleteMany({}, (err, posts) => {
-    //   if (err) console.log('can"t delete posts', err);
-    //   console.log('deleted all posts', posts);
-
-
-      // db.Trail.posts.forEach(postData => {
-      //   const post = new db.Post ({
-      //     title: postData.title,
-      //     description: postData.description
-      //   });
-
-      //   db.Trail.findOne({nickname: {$in: 'le'}}, (err, savedPost) => {
-      //     if (err) console.log('error', err);
-      //     trails.post.push(post[0], post[1]);
-      //     console.log(savedPost);
-      //   })
