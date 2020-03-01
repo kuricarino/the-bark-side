@@ -84,24 +84,24 @@ app.post('/api/trails/:trailId/post', (req, res) => {
 //     })
 // });
 
-
-db.Trail.deleteMany({}, (err, delTrails) => {
-    if (err) console.log('can"t delete trails', err);
-    // console.log('deleted all trails', delTrails);
+// CREATE code below attaching post but without content
+// db.Trail.deleteMany({}, (err, delTrails) => {
+//     if (err) console.log('can"t delete trails', err);
+//     // console.log('deleted all trails', delTrails);
   
-    db.Trail.create({},(err, newTrails) => {
-      if (err) console.log(`can't create new trails`);
-      // console.log(newTrails);
+//     db.Trail.create({},(err, newTrails) => {
+//       if (err) console.log(`can't create new trails`);
+//       // console.log(newTrails);
   
-        db.Post.create({}, (err, savedPost) => {
-          if (err) console.log(err);
-          newTrails.posts.push(savedPost);
-          newTrails.save();
-        console.log(newTrails);
-        })
-      })
-    })
-});
+//         db.Post.create({},(err, savedPost) => {
+//           if (err) console.log(err);
+//           newTrails.posts.push(savedPost);
+//           newTrails.save();
+//         console.log(newTrails);
+//         })
+//       })
+//     })
+// });
 
 
 // UPDATE: Post
