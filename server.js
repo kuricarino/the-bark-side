@@ -33,7 +33,7 @@ const routes = require('./routes');
 // app.use(express.static(__dirname/ + '/public'));
 
 // **** VIEWS ENDPOINTS **** 
-// app.use('/', routes.views);
+app.use('/', routes.views);
 
 // **** API ENDPOINTS **** 
 app.use('/api', routes.api);
@@ -48,11 +48,7 @@ app.use('/api', routes.api);
 // app.put('/api/trails/:trailId/posts/:postId', routes.api );
 
 // DELETE: Post  
-// app.delete('/api/trails/:trailId', (req, res) => {
-//     // db.Trail.deleteOne({nickname: req.params.trailId}, (err, delPost) => {
-
-//     // })
-// })
+app.delete('/api/trails/:trailId/posts/:postId', routes.api );
 
 // ** ERROR ENDPOINTS ** //
 
