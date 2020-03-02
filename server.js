@@ -44,9 +44,6 @@ app.use('/api', routes.api);
 
 // *** TRAILS *** //
 
-// UPDATE: Post  - tested 
-// app.put('/api/trails/:trailId/posts/:postId', routes.api );
-
 // DELETE: Post  
 app.delete('/api/trails/:trailId/posts/:postId', routes.api );
 
