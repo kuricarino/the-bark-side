@@ -1,0 +1,76 @@
+/* .container {
+  padding-right: 0px;
+  padding-left: 0px;
+} */
+
+.grid {
+  justify-items: end;
+}
+
+.container{
+
+}
+
+body {
+  background-color: lightslategrey;
+}
+
+#nav {
+  background-blend-mode: lighten;
+  /* opacity: 0.4; */
+  width: 100%;
+}
+#main {
+  display: flex;
+  text-align: left;
+  background-image: url(./images/sf.jpg);
+  background-size: 100% 100%;
+  background-position: center;
+  -webkit-text-fill-color: lightseagreen;
+  height: 400px;
+  width: 100%;
+};
+
+#test {
+  height: 150px;
+  width: 150px;
+  
+}
+.modal-content {
+  position: fixed; /* Stay in place */
+  align-items: center;
+  z-index: 1; /* Sit on top */
+  margin: auto;
+  width: auto; 
+  height: auto; 
+  overflow: auto; /* Enable scroll if needed */
+}
+
+/* Add Animation */
+.modal-content {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* #test {
+  position: relative;
+
+} */
+
+#pop {
+  display: flex;
+  align-content: flex-end;
+  justify-content: end;
+};
