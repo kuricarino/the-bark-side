@@ -1,17 +1,16 @@
 // ============= CREATE POST FUNCTION ON MODAL =============//
 
 document.querySelector('#submit-post').addEventListener('click', createPost);
-const postsContainer = document.querySelector('.scroll-box');
+const postsContainer = document.querySelector('.le-scroll-box');
 
 function createPost(event) {
-  // console.log(`does this work?`)
-  const title = document.querySelector('#post-title').value;
-  const body = document.querySelector('#message-text').value;
-  console.log(document.querySelector('#post-title').value);
-  console.log(document.querySelector('#message-text').value);
+  const title = document.querySelector('#le-post-title').value;
+  const body = document.querySelector('#le-message-text').value;
+  // console.log(document.querySelector('#post-title').value);
+  // console.log(document.querySelector('#message-text').value);
   const newPost = {title, body};
 
-  fetch('https://jsonplaceholder.typicode.com/posts', {
+  fetch('http;//localhost:5000', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

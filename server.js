@@ -30,7 +30,7 @@ const routes = require('./routes');
 /************* ROUTES *************/
 
 // Serve public assets: `/images`, `/scripts`, `/styles`
-// app.use(express.static(__dirname/ + '/public'));
+app.use(express.static(__dirname + '/public'))
 
 // **** VIEWS ENDPOINTS **** 
 app.use('/', routes.views);
