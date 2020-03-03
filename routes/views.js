@@ -9,21 +9,21 @@ router.get('/', (req, res) => {
     
 });
 
-router.get('/api/trails/ff', (req, res) => {
+router.get('/trails/ff', (req, res) => {
   // console.log(__dirname);
   res.sendFile('/views/ff.html', {
     root: __dirname + '../../'});
     
 });
 
-router.get('/api/trails/le', (req, res) => {
-  // console.log(__dirname);
+router.get('/trails/le', (req, res) => {
+  console.log(__dirname);
   res.sendFile('/views/le.html', {
     root: __dirname + '../../'});
     
 });
 
-router.get('/api/trails/mp', (req, res) => {
+router.get('/trails/mp', (req, res) => {
   // console.log(__dirname);
   res.sendFile('/views/mp.html', {
     root: __dirname + '../../'});
