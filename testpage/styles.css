@@ -3,12 +3,14 @@
   padding-left: 0px;
 } */
 
-.grid {
+/* .grid {
   justify-items: end;
-}
+} */
 
 .container{
-
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 body {
@@ -31,11 +33,11 @@ body {
   width: 100%;
 };
 
-#test {
+.picture-carousel {
   height: 150px;
   width: 150px;
-  
 }
+
 .modal-content {
   position: fixed; /* Stay in place */
   align-items: center;
