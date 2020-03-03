@@ -11,7 +11,7 @@ function createPost(event) {
   console.log(document.querySelector('#message-text').value);
   const newPost = {title, body};
 
-  fetch('/trails/:trailId/posts', {
+  fetch('https://jsonplaceholder.typicode.com/posts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
