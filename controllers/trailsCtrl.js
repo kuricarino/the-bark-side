@@ -20,6 +20,7 @@ const show = (req, res) => {
 
 // Create one post within a trail
 const create = (req, res) => {
+  console.log('create');
   // First, look for the trail by nickname
   db.Trail.findOne({nickname: req.params.trailId}, (err, foundTrail) => {
     if (err) return res.status(400).json({status: 400, error: 'Can"t find trail with this id'});
