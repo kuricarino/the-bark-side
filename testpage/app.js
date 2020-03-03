@@ -20,7 +20,7 @@ $("#pop").on("click", function() {
 // ============= CREATE POST: Mon, March 2 =============//
 
 document.querySelector('#submit-post').addEventListener('click', createPost);
-const postsContainer = document.querySelector('.post-container');
+const postsContainer = document.querySelector('.scroll-box');
 
 function createPost(event) {
   // console.log(`does this work?`)
@@ -30,7 +30,7 @@ function createPost(event) {
   console.log(document.querySelector('#message-text').value);
   const newPost = {title, body};
 
-  fetch('https://jsonplaceholder.typicode.com/posts', {
+  fetch('/trails/:trailId/posts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
