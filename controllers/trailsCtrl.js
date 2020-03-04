@@ -16,7 +16,7 @@ const show = (req, res) => {
       return res.json(showTrail);
       // console.log(showTrail);
   });
-}
+};
 
 // Create one post within a trail
 const create = (req, res) => {
