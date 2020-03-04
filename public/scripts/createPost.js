@@ -37,4 +37,10 @@ function getPostTemplate(post) {
   `;
 }
 
+
+$("#pop").on("click", function(e) {
+  e.preventDefault();
+ 
+  $('#le-npsimg').modal('toggle');
+});
 // ============= END OF CREATE POST ============= //
