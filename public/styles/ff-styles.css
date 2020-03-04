@@ -1,0 +1,57 @@
+body {
+    background-color: lightslategrey;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+
+#nav {
+    background-blend-mode: lighten;
+    width: 100%;
+  }
+
+#ff-carousel {
+    height: 100%;
+    width: 50%;
+    margin: auto;
+}
+
+.ff-specs {
+    margin-top: 1%;
+    margin-left: 25%;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  li {
+    display: inline;
+    padding-right: 10px;
+    font-size: medium;
+  }
+
+  .post-button {
+    margin-left: 25%;
+  }
+
+  .post-map-container {
+      display: flex;
+      flex-direction: row;
+  }
+
+  /* #leash-map-pop {
+    margin-right: 5%;
+  } */
+
+  .ff-scroll-box {
+    background: #f4f4f4;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    height: 22vh; /* maximum height of the box, feel free to change this! */
+    padding: 15px;
+    overflow-y: scroll;
+    margin: 1% 25%;
+  }
+
