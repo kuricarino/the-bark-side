@@ -1,4 +1,5 @@
 // ============= CREATE POST FUNCTION ON MODAL =============//
+// render(posts);
 
 document.querySelector('#submit-post').addEventListener('click', createPost);
 const postsContainer = document.querySelector('.ff-scroll-box');
@@ -33,11 +34,10 @@ function render(posts) {
 function getPostTemplate(post) {
     return`
     <div class="ff-scroll-box">
-    <p>${post.title}</p>
-    <p>${post.description}</p>
+    <p>Title: ${post.title}</p>
+    <p>Comment:${post.description}</p>
     </div>
     `;
 }
-
 
 // ============= END OF CREATE POST ============= //
