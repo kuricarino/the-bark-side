@@ -10,18 +10,20 @@ body {
     width: 100%;
   }
 
+/* CAROUSEL, TRAIL DETAILS, POSTS AND LEASH MAP IN FLEXBOX  */
+.flexbox-container {
+    display: flex;
+    justify-content: space-around;
+}
 #ff-carousel {
-    height: 100%;
-    width: 50%;
-    margin: auto;
+    height: 500px;
+    width: 600px;
+    /* margin: auto; */
 }
 
 .ff-specs {
     margin-top: 1%;
     margin-left: 25%;
-    margin-right: 25%;
-    padding: 10px;
-    border: solid 1px black;
 }
 
 ul {
@@ -36,37 +38,21 @@ ul {
     font-size: medium;
   }
 
-  /* .post-button {
+  .post-button {
     margin-left: 25%;
-    margin-right: 10px;
-  } */
+  }
 
   .post-map-container {
       display: flex;
       flex-direction: row;
-      justify-content: space-around;
-      /* margin-top: 10px;
-      margin-left: 23%;
-      margin-right: 25%; */
-  }
-
-  /* #leash-map-pop {
-    margin-right: 5%;
-  } */
-
-  .post-flexbox {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-top: 10px;
   }
 
   .ff-scroll-box {
-    background: rgba(244, 244, 244, 0.1);
-    /* border: 2px solid rgba(0, 0, 0, 0.1); */
+    background: #f4f4f4;
+    border: 2px solid rgba(0, 0, 0, 0.1);
     height: 22vh; /* maximum height of the box, feel free to change this! */
-    width: 50vh;
-    /* padding: 15px; */
+    padding: 15px;
     overflow-y: scroll;
-    /* margin: 1% 25%; */
+    margin: 1% 25%;
   }
+
