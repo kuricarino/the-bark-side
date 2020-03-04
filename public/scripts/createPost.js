@@ -31,22 +31,14 @@ function render(post) {
 };
 
 function getPostTemplate(post) {
-  // console.log(post);
-  // console.log(post.posts);
-  for (let i = 0; i < post.posts.length; i++) {
-  ` 
+  console.log(post);
+  console.log(post.posts);
+  return ` 
   <div class="ff-scroll-box">
-    <p>Title:${post.posts[i].title}</p>
-    <p>Post:${post.posts[i].description}</p>
+    <p>Title:${post.posts[0].title}</p>
+    <p>Post:${post.posts[0].description}</p>
   </div>
-  `
-  }
-  // return ` 
-  // <div class="ff-scroll-box">
-  //   <p>Title:${post.posts[0].title}</p>
-  //   <p>Post:${post.posts[0].description}</p>
-  // </div>
-  // `;
+  `;
 }
 
 
