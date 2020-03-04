@@ -19,6 +19,9 @@ body {
 .ff-specs {
     margin-top: 1%;
     margin-left: 25%;
+    margin-right: 25%;
+    padding: 10px;
+    border: solid 1px black;
 }
 
 ul {
@@ -33,13 +36,18 @@ ul {
     font-size: medium;
   }
 
-  .post-button {
+  /* .post-button {
     margin-left: 25%;
-  }
+    margin-right: 10px;
+  } */
 
   .post-map-container {
       display: flex;
       flex-direction: row;
+      justify-content: space-around;
+      margin-top: 10px;
+      margin-left: 23%;
+      margin-right: 25%;
   }
 
   /* #leash-map-pop {
@@ -47,9 +55,10 @@ ul {
   } */
 
   .ff-scroll-box {
-    background: #f4f4f4;
-    border: 2px solid rgba(0, 0, 0, 0.1);
+    /* background: rgba(244, 244, 244, 0.1); */
+    /* border: 2px solid rgba(0, 0, 0, 0.1); */
     height: 22vh; /* maximum height of the box, feel free to change this! */
+    width: 45vh;
     padding: 15px;
     overflow-y: scroll;
     margin: 1% 25%;

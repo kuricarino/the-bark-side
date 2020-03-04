@@ -10,6 +10,7 @@ document.querySelector('#submit-post').addEventListener('click', createPost);
 const postsContainer = document.querySelector('.ff-scroll-box');
 console.log(postsContainer);
 
+
 function createPost(event) {
   console.log('create post');
   const title = document.querySelector('#ff-post-title').value;
@@ -25,7 +26,7 @@ function createPost(event) {
       })
       .then(stream => stream.json())
       .then(res => render(res))
-      .catch(err => console.log(err))  
+      .catch(err => console.log(err))
 };
 
 function render(posts) {
@@ -42,9 +43,15 @@ function getPostTemplate(post) {
     <div class="ff-scroll-box">
     <p>Title: ${post.title}</p>
     <p>Comment:${post.description}</p>
+    <button>Update</button>
+    <button>Delete</button>
     </div>
     `;
 }
+
+// UPDATE
+document.querySelector('#submit-post').addEventListener('click', createPost);
+
 
 $("#pop").on("click", function(e) {
   e.preventDefault();

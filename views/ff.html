@@ -11,12 +11,7 @@
   <script defer src="/scripts/createPost.js"></script>
   <title>The Bark Side: Fort Funston</title>
 </head>
-<<<<<<< HEAD
-<body>
-    <!-- onload="onPageLoad()" -->
-=======
 <body>  
->>>>>>> 60488c43dab860482bb8ffffc55a17cd2fb8db53
 
 <!-- NAV BAR -->
 <div id="nav">
@@ -82,6 +77,14 @@
       <li>Difficulty: Easy</li>
       <li>Route type: Loop</li>
     </ul>
+    <br>
+    <p>
+        Fort Funston features beaufiful wild flowers, 200 foot high sandy bluffs on San Francisco's SW coast where the winds blow reliably wildly. A network of trails make it ideal for hiking and horseback riding, and is good for all skill levels. This trail is moderately trafficed, accessible year-round and dog owners will be happy to know they can take leashes off here.
+        <br>
+        <br>
+        <strong>Popular uses</strong>: hiking, walking, nature trips, birdwatching. 
+    
+    </p>
 </div>
 <!-- Trail Specs END -->
 </div>
@@ -90,6 +93,47 @@
 
 <!-- Post Modal & Leash Map Button DIV START (flexbox) -->
 <div class="post-map-container">
+
+
+<!-- Trail description START -->        
+<!-- <div class="trail-descrptn">
+    <p>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Click for description
+      </button>
+    </p>
+    <div class="collapse" id="collapseExample">
+      <div class="card card-body">
+        <p>Fort Funston features beaufiful wild flowers, 200 foot high sandy bluffs on San Francisco"s SW coast where the winds blow reliably wildly. A network of trails make it ideal for hiking and horseback riding, and is good for all skill levels. This trail is moderately trafficed, accessible year-round and dog owners will be happy to know they can take leashes off here.
+        <br>
+        <strong>Popular uses</strong>: hiking, walking, nature trips, birdwatching. 
+        </p>
+      </div>
+    </div>
+  </div> -->
+<!-- Trail description END -->
+
+
+<!--Leash Map START -->
+<div class="ff-leash-map">  
+    <button id="leash-map-pop" type="button" class="btn btn-info">Leash Map</button>
+    <!-- Creates the bootstrap modal where the image will appear -->
+    <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <img src="/images/ff-nps.jpg" id="imagepreview" style="width: 600px; height: 400px;">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--Leash Map END -->
+
+
 <!-- Posts Modal START -->
 <div class="post-button">
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Share your experience!</button>
@@ -119,27 +163,11 @@
   </div>
 <!-- Posts Modal END -->
 
-<!--Leash Map START -->
-<div class="ff-leash-map">  
-    <button id="leash-map-pop" type="button" class="btn btn-info">Leash Map</button>
-    <!-- Creates the bootstrap modal where the image will appear -->
-    <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-body">
-            <img src="/images/ff-nps.jpg" id="imagepreview" style="width: 600px; height: 400px;">
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-<!--Leash Map END -->
+
+<!-- Link to Posts button -->
+<button type="button" class="btn btn-link" id="see-all-posts">See All Posts</button>
 </div>
 <!-- Post Modal & Leash Map Button DIV END (flexbox) -->
-
 <!-- Posts Scroll Box  START -->
 <div class="ff-scroll-box">
 </div>
