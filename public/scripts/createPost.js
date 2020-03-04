@@ -1,16 +1,14 @@
 // ============= CREATE POST FUNCTION ON MODAL =============//
 
-document.querySelector('ff-form').addEventListener('submit', createPost);
+document.querySelector('#submit-post').addEventListener('click', createPost);
 const postsContainer = document.querySelector('.ff-scroll-box');
 console.log(postsContainer);
 
-function createPost(e) {
+function createPost(event) {
   console.log('create post');
   const title = document.querySelector('#ff-post-title').value;
-  const body = document.querySelector('#ff-message-text').value;
-  // console.log(document.querySelector('#post-title').value);
-  // console.log(document.querySelector('#message-text').value);
-  const newPost = {title, body};
+  const description = document.querySelector('#ff-message-text').value;
+  const newPost = {title, description};
 
   fetch('/api/trails/ff/posts', {
         method: 'POST',
@@ -24,17 +22,22 @@ function createPost(e) {
       .catch(err => console.log(err))
 };
 
-function render(post) {
-  postsContainer.insertAdjacentHTML('beforeend', getPostTemplate(post))
+function render(posts) {
+  
+  for (let i = posts.posts.length - 1; i > 0; i--) {
+    
+  postsContainer.insertAdjacentHTML('beforeend', getPostTemplate(posts.posts[i]))
+  }
 };
 
 function getPostTemplate(post) {
-  return `
-  <div class="ff-scroll-box">
-    <p>Title:${post.title}</p>
-    <p>Post:${post.body}</p>
-  </div>
-  `;
+    return`
+    <div class="ff-scroll-box">
+    <p>${post.title}</p>
+    <p>${post.description}</p>
+    </div>
+    `;
 }
+
 
 // ============= END OF CREATE POST ============= //
