@@ -35,6 +35,7 @@ function createPost(event) {
 }
 
 function render(posts) {
+  console.log(posts);
   postsContainer.insertAdjacentHTML('beforeend', getPostTemplate(posts))
 
 }
@@ -64,7 +65,7 @@ function getPostTemplate(post) {
 }
 
 // UPDATE
-document.querySelector('#submit-post').addEventListener('click', createPost);
+// document.querySelector('#submit-post').addEventListener('click', createPost);
 
 
 $("#pop").on("click", function(e) {
@@ -72,6 +73,7 @@ $("#pop").on("click", function(e) {
   $('#le-npsimg').modal('toggle');
 });
 // ============= END OF CREATE POST ============= //
+
 
 
 

@@ -45,21 +45,28 @@ ul {
       display: flex;
       flex-direction: row;
       justify-content: space-around;
-      margin-top: 10px;
+      /* margin-top: 10px;
       margin-left: 23%;
-      margin-right: 25%;
+      margin-right: 25%; */
   }
 
   /* #leash-map-pop {
     margin-right: 5%;
   } */
 
+  .post-flexbox {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 10px;
+  }
+
   .ff-scroll-box {
-    /* background: rgba(244, 244, 244, 0.1); */
+    background: rgba(244, 244, 244, 0.1);
     /* border: 2px solid rgba(0, 0, 0, 0.1); */
     height: 22vh; /* maximum height of the box, feel free to change this! */
-    width: 45vh;
-    padding: 15px;
+    width: 50vh;
+    /* padding: 15px; */
     overflow-y: scroll;
-    margin: 1% 25%;
+    /* margin: 1% 25%; */
   }
