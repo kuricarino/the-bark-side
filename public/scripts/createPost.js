@@ -1,8 +1,6 @@
 // ============= CREATE POST FUNCTION ON MODAL =============//
-// loadPosts();
 
 document.querySelector('#submit-post').addEventListener('click', createPost);
-// console.log(document.querySelector('#submit-post'));
 const postsContainer = document.querySelector('.ff-scroll-box');
 console.log(postsContainer);
 
@@ -10,8 +8,6 @@ function createPost(event) {
   console.log('create post');
   const title = document.querySelector('#ff-post-title').value;
   const description = document.querySelector('#ff-message-text').value;
-  // console.log(document.querySelector('#post-title').value);
-  // console.log(document.querySelector('#message-text').value);
   const newPost = {title, description};
 
   fetch('/api/trails/ff/posts', {
@@ -26,35 +22,22 @@ function createPost(event) {
       .catch(err => console.log(err))
 };
 
-function render(post) {
-  postsContainer.insertAdjacentHTML('beforeend', getPostTemplate(post))
+function render(posts) {
+  
+  for (let i = posts.posts.length - 1; i > 0; i--) {
+    
+  postsContainer.insertAdjacentHTML('beforeend', getPostTemplate(posts.posts[i]))
+  }
 };
 
 function getPostTemplate(post) {
-  console.log(post);
-  console.log(post.posts);
-  return ` 
-  <div class="ff-scroll-box">
-    <p>Title:${post.posts[0].title}</p>
-    <p>Post:${post.posts[0].description}</p>
-  </div>
-  `;
+    return`
+    <div class="ff-scroll-box">
+    <p>${post.title}</p>
+    <p>${post.description}</p>
+    </div>
+    `;
 }
-
-
-
-// Create a function for when first visit page and loads every single post
-
-// function loadPosts() {
-//   post.posts.populate()
-//   .exec((err, post) => {
-//     if (err) return res.status(400).json({msg: 'Book ID does not exist'});
-//     res.json(post)
-//   })
-// }
-
-
-// Another function for when they create a new post that just returns new post  
 
 
 // ============= END OF CREATE POST ============= //
