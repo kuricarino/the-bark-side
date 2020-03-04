@@ -13,7 +13,7 @@ body {
 /* CAROUSEL, TRAIL DETAILS, POSTS AND LEASH MAP IN FLEXBOX  */
 .flexbox-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
 #ff-carousel {
     height: 500px;
@@ -22,7 +22,8 @@ body {
 }
 
 .ff-specs {
-    margin-left: 12px;
+    margin-top: 1%;
+    margin-left: 25%;
 }
 
 ul {
@@ -38,7 +39,7 @@ ul {
   }
 
   .post-button {
-    margin-left: 160px;
+    margin-left: 25%;
   }
 
   .post-map-container {
@@ -52,6 +53,6 @@ ul {
     height: 22vh; /* maximum height of the box, feel free to change this! */
     padding: 15px;
     overflow-y: scroll;
-    margin: 1% 540px 1% 160px;
+    margin: 1% 25%;
   }
 
