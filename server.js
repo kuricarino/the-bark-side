@@ -38,11 +38,8 @@ app.use('/', routes.views);
 // **** API ENDPOINTS **** 
 app.use('/api', routes.api);
 
-// (req,res) => {
-//     res.send('<h1>Trails</h1>');
-// });
 
-// *** TRAILS *** //
+// *** POSTS *** //
 
 // DELETE: Post  
 app.delete('/api/trails/:trailId/posts/:postId', routes.api );

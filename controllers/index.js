@@ -1,3 +1,4 @@
 module.exports = {
-  trails: require('./trailsCtrl')
+  trails: require('./trailsCtrl'),
+  posts: require('./postsCtrl')
 };

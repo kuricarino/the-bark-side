@@ -1,3 +1,9 @@
+// ============= PRE RENDER ALL POSTS =============//
+
+//api call
+  //GET all posts
+  //render html for each POST
+
 // ============= CREATE POST FUNCTION ON MODAL =============//
 
 document.querySelector('#submit-post').addEventListener('click', createPost);
@@ -19,16 +25,17 @@ function createPost(event) {
       })
       .then(stream => stream.json())
       .then(res => render(res))
-      .catch(err => console.log(err))
+      .catch(err => console.log(err))  
 };
 
 function render(posts) {
-  
   for (let i = posts.posts.length - 1; i > 0; i--) {
-    
-  postsContainer.insertAdjacentHTML('beforeend', getPostTemplate(posts.posts[i]))
+    postsContainer.insertAdjacentHTML('beforeend', getPostTemplate(posts.posts[i]))
   }
 };
+function render(post) {
+      postsContainer.insertAdjacentHTML('beforeend', getPostTemplate(post))
+  };
 
 function getPostTemplate(post) {
     return`
@@ -39,10 +46,9 @@ function getPostTemplate(post) {
     `;
 }
 
-
 $("#pop").on("click", function(e) {
   e.preventDefault();
- 
   $('#le-npsimg').modal('toggle');
 });
 // ============= END OF CREATE POST ============= //
+
