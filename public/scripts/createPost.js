@@ -90,18 +90,7 @@ function updPost(event) {
 
 
 function renderUpdate(post) {
-  const title = document.querySelector('#ff-post-title').value;
-  const description = document.querySelector('#ff-message-text').value;  
-  const newPost = {title, description};
-
-  document.querySelector()
-
-
-  console.log(newPost);
-
-  postsContainer.innerHTML('') 
-  getPostTemplate(post);
-
+ 
 }
 
 
