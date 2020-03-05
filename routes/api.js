@@ -19,7 +19,7 @@ router.get('/trails/:trailId/posts', ctrl.posts.index);
 router.post('/trails/:trailId/posts', ctrl.trails.create);
 
 //  Update post
-router.put('/trails/:trailId/posts/:postId', ctrl.trails.update);
+router.put('/trails/:trailId/posts/:postId/comments', ctrl.trails.update);
 
 //  Delete post
 router.delete('/trails/:trailId/posts/:postId', ctrl.trails.destroy);
