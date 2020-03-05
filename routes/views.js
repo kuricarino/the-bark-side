@@ -30,10 +30,10 @@ router.get('/trails/mp', (req, res) => {
     
 });
 
-router.get(`/trails/:trailId/posts/:postId/comments`, (req, res) => {
+router.get(`/trails/:trailId/posts/:postId/updates`, (req, res) => {
   // console.log(__dirname);
   res.sendFile('/views/form.html', {
     root: __dirname + '../../'});
-    
 });
+
 module.exports = router;

@@ -114,3 +114,11 @@ h2 {
   margin-top: 3.5vh;
 }
 
+label {
+  position: absolute;
+}
+
+.btn-success {
+  margin-top: 28vh;
+}
+
