@@ -11,113 +11,106 @@ body {
   align-content: center;
 }
 
+body {
+  background: url(../images/sf.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
 #nav {
+  background-color: transparent;
+
+}
+
+.navbar-brand {
+  font-size: 2vh;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-text-fill-color: rgb(94, 186, 174);
+}
+
+#navbarDropdown {
   background-blend-mode: lighten;
   width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-text-fill-color: rgb(94, 186, 174);
 }
 
 #main {
   display: flex;
   text-align: left;
-  background-image: url(../images/sf.jpg);
-  background-size: 100% 100%;
-  background-position: center;
-  -webkit-text-fill-color: lightseagreen;
-  height: 70vh;
-  width: 100%;
+  -webkit-text-fill-color: rgb(94, 186, 174);
+  margin-top: 8vh;
+  margin-left: 5vh;
 }
 
-#one-ff {  /* carousel*/
-  margin: auto;
-  width: 100%;
-  height: 30vh;
+.dropdown-menu {
+  background-color: transparent;
+  border: transparent;
+  -webkit-text-fill-color: rgb(94, 186, 174);
 }
 
-#one-le {   /* carousel*/
-  margin: auto;
-  width: 100%;
-  height: 50vh;
-}
-section {
-  width: auto;
-  float: left;
-  padding-left: 20px;
-}
-aside {
-  display: flex;
-  width: 60%;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-content: right;
-  margin: auto;
+.dropdown-item {
+  -webkit-text-fill-color: rgb(94, 186, 174);
 }
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+.dropdown-item:hover {
+  background-color: transparent;
+  border-left: 1px dotted black;
 }
 
-li {
-  display: inline;
-  padding-right: 10px;
-  font-size: medium;
+h1 {
+  font-size: 10vh;
+  font-family: 'Kalam', cursive;
+  font-weight: bold;
+  letter-spacing: 1vh;
 }
 
-#ff-carousel, #le-carousel  {
-  height: 50%; 
-  width: 50%;
-  padding-right: 10px;
+h2 {
+  font-size: 5vh;
+  font-family: 'Kalam', cursive;
+  background: -webkit-linear-gradient(#5ebaae, #486461);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.trail-descrptn {
-  position: relative;
-  bottom: -20px;
+.btn {
+  margin: 0 1vh;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2vh;
+  font-weight: bolder;
+  -webkit-text-fill-color: rgb(72, 100, 97);
 }
 
-.ff-trail, .le-trail {
-  padding-left: -40px;
+.modal-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 5vh;
+  font-weight: bolder;
+  -webkit-text-fill-color: rgba(72, 100, 97, 0.7);
+  margin-left: 2vh;
+  margin-top: 6vh;
 }
 
-.ff-leash-map, .le-leash-map {
-  padding-left: 20px;
-  padding-right: 20px
+.form-check-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2vh;
+  -webkit-text-fill-color: rgb(72, 100, 97);
 }
 
-.ff-scroll-box, .le-scroll-box {
-  background: #f4f4f4;
-  border: 2px solid rgba(0, 0, 0, 0.1);
-  height: 22vh; /* maximum height of the box, feel free to change this! */
-  width: 80%;
-  padding: 15px;
-  overflow-y: scroll;
+#Form-pass5 {
+  margin-top: 1px;
 }
 
-.modal-content {
-  position: fixed; /* Stay in place */
-  align-items: center;
-  z-index: 1; /* Sit on top */
-  margin: auto;
-  width: auto; 
-  height: auto; 
-  overflow: auto; /* Enable scroll if needed */
+.form-group {
+  font-family: 'Montserrat', sans-serif;
+  margin-left: 3vh;
 }
 
-/* Add Animation */
-.modal-content {  
-  -webkit-animation-name: zoom;
-  -webkit-animation-duration: 0.6s;
-  animation-name: zoom;
-  animation-duration: 0.6s;
-}
-
-@-webkit-keyframes zoom {
-  from {-webkit-transform:scale(0)} 
-  to {-webkit-transform:scale(1)}
-}
-
-@keyframes zoom {
-  from {transform:scale(0)} 
-  to {transform:scale(1)}
+.font-small {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3vh;
+  -webkit-text-fill-color: rgb(72, 100, 97);
+  margin-top: 3.5vh;
 }
 

@@ -16,6 +16,7 @@
 
 // ************ TODOS ************ //
 // 1. Submit button also closes and hitting return will submit
+// 2. FIGURE OUT HOW TO: get postId and trailId in url --> open to form.html
 
 
 

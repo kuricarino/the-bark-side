@@ -29,4 +29,11 @@ router.get('/trails/mp', (req, res) => {
     root: __dirname + '../../'});
     
 });
+
+router.get(`/trails/:trailId/posts/:postId/comments`, (req, res) => {
+  // console.log(__dirname);
+  res.sendFile('/views/form.html', {
+    root: __dirname + '../../'});
+    
+});
 module.exports = router;
