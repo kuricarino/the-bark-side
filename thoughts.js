@@ -17,6 +17,8 @@
 // ************ TODOS ************ //
 // 1. Submit button also closes and hitting return will submit
 // 2. FIGURE OUT HOW TO: get postId and trailId in url --> open to form.html
+// 3. Post form: On submit reroute back to original trail page
+        // .save() on update
 
 
 
