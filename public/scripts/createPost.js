@@ -123,3 +123,13 @@ function renderUpdate(post) {
 //   e.preventDefault();
 //   $('#le-npsimg').modal('toggle');
 // });
+
+
+
+
+
+
+
+// DELETE ONE POST
+
+
