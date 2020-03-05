@@ -1,6 +1,8 @@
 // ============= INDEX POST ON PAGE LOAD =============//
 
 const postsContainer = document.querySelector('.ff-scroll-box');
+// const title = document.querySelector('#ff-post-title').value;
+// const description = document.querySelector('#ff-message-text').value;
 
 function allPosts() {
   fetch('/api/trails/ff/posts')
@@ -21,7 +23,7 @@ document.querySelector('#submit-post').addEventListener('click', createPost);
 
 function createPost(event) {
   const title = document.querySelector('#ff-post-title').value;
-  const description = document.querySelector('#ff-message-text').value;
+  const description = document.querySelector('#ff-message-text').value;  
   const newPost = {title, description};
 
   fetch('/api/trails/ff/posts', {
@@ -45,45 +47,62 @@ function render(post) {
 
 function getPostTemplate(post) {
     return`
-    <div class=${post._id}>
+    <div class="postbox" data-id=${post._id}>
       <p>Title: ${post.title}</p>
       <p>Comment: ${post.description}</p>
-      <button class="upd" id="${post._id}">Update </button>
-      <button class="del" id="${post._id}>Delete</button>
+  
+      <button class="del btn btn-outline-danger">Delete</button>
     </div>
     `;
 }
 
 // ============= DELETE ONE POST ============= //
 
+{/* <a href="http://localhost:5000/trails/ff/posts/${post._id}/comments" id="updatePost">Update</a> */}
 
-document.querySelector('.del').addEventListener('click', (event) => {
-  if (event.target.classList.contains(`${post._id}`));
-  delPost(event);
+
+document.querySelector('.ff-scroll-box').addEventListener('click', (event) => {
+  if (event.target.classList.contains("del")) delPost(event);
+  else if (event.target.classList.contains("upd")) {
+    console.log('hi');
+    // updPost(event);
+  }
 });
 
-// const postID = document.getElementById(`${_id}`);
-// console.log(postID)
-// const delClass = document.querySelector('.del');
-// console.log(delClass);
-// const delBtn = delClass.concat(postDiv);
-// console.log(delBtn);
-
 function delPost(event) {
-  fetch(`/trails/:trailId/posts/${event.target.parentNode._id}`, {
-    method: 'DELETE',
+  fetch(`/api/trails/ff/posts/${event.target.parentNode.dataset.id}`, {
+    method: 'DELETE'
   })
   .then(stream => stream.json())
-  .then(res => renderOne(res)) 
-  .catch(err => console.log(err));
+  .catch(err => console.log(err))
+  event.target.parentNode.remove();
+};
+
+function updPost(event) {
+  fetch(`/api/trails/ff/posts/${event.target.parentNode.dataset.id}`, {
+    method: 'PUT'
+  })
+  .then(stream => stream.json())
+  .then(res => renderUpdate(res))
+  .catch(err => console.log(err))
+  event.target.parentNode.update();
+};
+
+
+function renderUpdate(post) {
+  const title = document.querySelector('#ff-post-title').value;
+  const description = document.querySelector('#ff-message-text').value;  
+  const newPost = {title, description};
+
+  document.querySelector()
+
+
+  console.log(newPost);
+
+  postsContainer.innerHTML('') 
+  getPostTemplate(post);
+
 }
-
-
-
-
-
-
-
 
 
 

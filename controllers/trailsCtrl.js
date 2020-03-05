@@ -35,25 +35,21 @@ const create = (req, res) => {
   });
 };
 
-// UPDATE: Post within a trail -- QUESTION
+// UPDATE: Post within a trail 
 const update = (req, res) => {
   db.Trail.findOne({nickname: req.params.trailId}, (err, foundTrail) => {
     if (err) return res.status(400).json({status: 400, error: 'Can"t find trail with this id'});
     if (!foundTrail) return res.json({error: 'Could not find trail'});
 
-  // Find the post by id and update ---> this updates the individual post, but not the post assoc. with the trail
-    db.Post.findOneAndUpdate(req.params.postId, {$set: { title: req.body, description: req.body }}, {new: true}, (err, updatedPost) => {
-      // console.log( req.params.postId);
-      // console.log(req.body);
+    db.Post.findOneAndUpdate(req.params.postId, {$set: { title: req.body.title, description: req.body.description }}, {new: true}, (err, updatedPost) => {
       if (err) return res.status(400).json({status: 400, error: `Can"t update post. Try again`});
-      console.log(foundTrail);
-      // console.log(updatedPost);
+      updatedPost.save();
       return res.json(updatedPost);
   });
 });
 };
 
-// DELETE: Post within a trail -- tested in Postman
+// DELETE: Post within a trail 
 const destroy = (req, res) => {
   db.Trail.findOne({nickname: req.params.trailId}, (err, foundTrail) => {
     if (err) return res.status(400).json({status: 400, error: 'Can"t find trail with this id'});
@@ -66,7 +62,6 @@ const destroy = (req, res) => {
     })
   })
 };
-
 
 module.exports = {
   index,
