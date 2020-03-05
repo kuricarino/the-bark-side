@@ -14,4 +14,8 @@
         // unique event listener for each update/delete button
 
 
+// ************ TODOS ************ //
+// 1. Submit button also closes and hitting return will submit
+
+
 

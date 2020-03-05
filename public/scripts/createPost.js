@@ -66,3 +66,13 @@ function getPostTemplate(post) {
 //   e.preventDefault();
 //   $('#le-npsimg').modal('toggle');
 // });
+
+
+
+
+
+
+
+// DELETE ONE POST
+
+
