@@ -35,25 +35,6 @@ const trails = [
 }];
 
 
-// Will need to remove or update later
-
-// db.createCollection("counters");
-// db.counters.insert({_id:"pid",sequence_value:0});
-
-// function getNextSequenceValue(sequenceName){
-//     let sequenceDocument = db.counters.findAndModify({
-//        query:{_id: sequenceName },
-//        update: {$inc:{sequence_value:1}},
-//        new:true
-//     });
-//     return sequenceDocument.sequence_value;
-//  }
-
-//  db.Post.insert({
-//    _id: getNextSequenceValue("pid")
-//  });
-
-
 const posts = [
   {
     title: 'Fort Funston 1',
@@ -86,10 +67,6 @@ db.Trail.deleteMany({}, (err, delTrails) => {
   });
 });
 
-// module.exports = {
-//   trails,
-//   posts
-// }
 
 //  FOR CREATING NEW POSTS - NOT COMPLETE
 
