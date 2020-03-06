@@ -19,9 +19,8 @@ body {
 
 #nav {
   background-color: transparent;
-
 }
-
+ 
 .navbar-brand {
   font-size: 2vh;
   font-family: 'Montserrat', sans-serif;
@@ -121,4 +120,3 @@ label {
 .btn-success {
   margin-top: 28vh;
 }
-
