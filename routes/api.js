@@ -24,5 +24,4 @@ router.put('/trails/:trailId/posts/:postId/updates', ctrl.trails.update);
 //  Delete post
 router.delete('/trails/:trailId/posts/:postId', ctrl.trails.destroy);
 
-
 module.exports = router;

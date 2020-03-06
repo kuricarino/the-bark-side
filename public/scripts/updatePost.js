@@ -23,6 +23,5 @@ function update(event) {
 };
 
 function renderUpdate(updPost) {
-    console.log(`post updated`)
     window.location.replace(`/trails/le`);
 }
