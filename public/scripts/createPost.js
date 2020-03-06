@@ -51,11 +51,11 @@ function render(post) {
 function getPostTemplate(post) {
     return`
     <div class="postbox" data-id=${post._id}>
-      <p>Title: ${post.title}</p>
+      <p>From: ${post.title}</p>
       <p>Comment: ${post.description}</p>
       <button class="upd btn btn-outline-danger">Update</button>
       <button class="del btn btn-outline-danger">Delete</button>
-      <p>---------------------------------------------------------------------------------------</p>
+      <p>-------------------------------------------------------------------------------------------------------</p>
     </div>
     `;
 }
