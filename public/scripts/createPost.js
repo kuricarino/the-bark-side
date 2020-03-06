@@ -1,17 +1,20 @@
 // ============= INDEX POST ON PAGE LOAD =============//
 
-const postsContainer = document.querySelector('.ff-scroll-box');
+const postsContainer = document.querySelector('.le-scroll-box');
 // const title = document.querySelector('#ff-post-title').value;
 // const description = document.querySelector('#ff-message-text').value;
 
 function allPosts() {
-  fetch('/api/trails/ff/posts')
-  .then(stream => stream.json())
-  .then(res => renderAll(res))
+  fetch('/api/trails/le')
+  .then(stream => stream.json()) 
+  .then((res) => {
+    console.log(res);
+    renderAll(res)
+});
 }
 
-function renderAll(posts) {
-  posts.forEach(post => {
+function renderAll(trail) {
+  trail.posts.forEach(post => {
     render(post)
   })
 }
@@ -22,11 +25,11 @@ allPosts();
 document.querySelector('#submit-post').addEventListener('click', createPost);
 
 function createPost(event) {
-  const title = document.querySelector('#ff-post-title').value;
-  const description = document.querySelector('#ff-message-text').value;  
+  const title = document.querySelector('#le-post-title').value;
+  const description = document.querySelector('#le-post-comment').value;  
   const newPost = {title, description};
 
-  fetch('/api/trails/ff/posts', {
+  fetch('/api/trails/le/posts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -50,27 +53,25 @@ function getPostTemplate(post) {
     <div class="postbox" data-id=${post._id}>
       <p>Title: ${post.title}</p>
       <p>Comment: ${post.description}</p>
-  
+      <button class="upd btn btn-outline-danger">Update</button>
       <button class="del btn btn-outline-danger">Delete</button>
+      <p>---------------------------------------------------------------------------------------</p>
     </div>
     `;
 }
 
 // ============= DELETE ONE POST ============= //
 
-{/* <a href="http://localhost:5000/trails/ff/posts/${post._id}/comments" id="updatePost">Update</a> */}
-
-
-document.querySelector('.ff-scroll-box').addEventListener('click', (event) => {
+document.querySelector('.le-scroll-box').addEventListener('click', (event) => {
   if (event.target.classList.contains("del")) delPost(event);
-  else if (event.target.classList.contains("upd")) {
-    console.log('hi');
+  // else if (event.target.classList.contains("upd")) {
+  //   console.log('hi');
     // updPost(event);
-  }
+  // }
 });
 
 function delPost(event) {
-  fetch(`/api/trails/ff/posts/${event.target.parentNode.dataset.id}`, {
+  fetch(`/api/trails/le/posts/${event.target.parentNode.dataset.id}`, {
     method: 'DELETE'
   })
   .then(stream => stream.json())
@@ -78,20 +79,69 @@ function delPost(event) {
   event.target.parentNode.remove();
 };
 
+
+// ============= UPDATE ONE POST ============= //
+
+document.querySelector('.le-scroll-box').addEventListener('click', (event) => {
+  if (event.target.classList.contains("upd")) {
+    console.log('hi');
+    console.log(event.target.parentNode.dataset.id);
+    const postId = event.target.parentNode.dataset.id;
+    console.log(postId);
+    window.location.replace(`/trails/le/posts/${postId}/updates`);
+
+    // updPost(event);
+  }
+});
+
 function updPost(event) {
-  fetch(`/api/trails/ff/posts/${event.target.parentNode.dataset.id}`, {
+  fetch(`/api/trails/le/posts/${event.target.parentNode.dataset.id}/updates`, {
     method: 'PUT'
   })
   .then(stream => stream.json())
-  .then(res => renderUpdate(res))
+  //.then(res => renderUpdate(res))
   .catch(err => console.log(err))
   event.target.parentNode.update();
 };
 
-
 function renderUpdate(post) {
- 
+  //updPostsContainer.innerHTML = getPostTemp(post);
 }
+
+
+function getPostTemp(post) {
+  // either route to a new form on a different html page or same form on the same page
+  const title = document.querySelector('#post-title').value;
+  console.log(title);
+  const description = document.querySelector('#post-description').value;  
+  console.log(description);
+  const updPost = {title, description};
+
+    return `
+    <div class="postbox" data-id=${post._id}>
+      <p>Title: ${post.title}</p>
+      <p>Comment: ${post.description}</p>
+      <button class="upd btn btn-outline-danger">Update</button>
+
+      <button class="del btn btn-outline-danger">Delete</button>
+      <p>---------------------------------------------------------------------------------------</p>
+    </div>
+    `;
+}
+
+
+// document.querySelector('form-update').addEventListener('click', (event) => {
+//   if (event.target.classList.contains("submit")) console.log('clicked submit')
+// });
+
+// document.querySelector('submit').addEventListener('click', (submitUpd));
+
+// function submitUpd () {
+//   console.log('clicked submit')
+// }
+
+
+
 
 
 
@@ -112,13 +162,3 @@ function renderUpdate(post) {
 //   e.preventDefault();
 //   $('#le-npsimg').modal('toggle');
 // });
-
-
-
-
-
-
-
-// DELETE ONE POST
-
-
