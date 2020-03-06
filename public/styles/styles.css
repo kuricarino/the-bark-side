@@ -9,9 +9,7 @@ body {
   display: flex;
   flex-direction: column;
   align-content: center;
-}
 
-body {
   background: url(../images/sf.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -21,9 +19,8 @@ body {
 
 #nav {
   background-color: transparent;
-
 }
-
+ 
 .navbar-brand {
   font-size: 2vh;
   font-family: 'Montserrat', sans-serif;
@@ -75,6 +72,8 @@ h2 {
   -webkit-text-fill-color: transparent;
 }
 
+/* Sign Up Modal */
+
 .btn {
   margin: 0 1vh;
   font-family: 'Montserrat', sans-serif;
@@ -121,4 +120,3 @@ label {
 .btn-success {
   margin-top: 28vh;
 }
-

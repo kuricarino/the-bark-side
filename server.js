@@ -25,7 +25,6 @@ app.use(bodyParser.urlencoded({extended: true}));
 // Require DB
 const db = require('./models');
 const routes = require('./routes');
-// const views = require('./views');
 
 /************* ROUTES *************/
 
@@ -39,12 +38,7 @@ app.use('/', routes.views);
 app.use('/api', routes.api);
 
 
-// *** POSTS *** //
-
-// DELETE: Post  
-app.delete('/api/trails/:trailId/posts/:postId', routes.api );
-
-// ** ERROR ENDPOINTS ** //
+//************* ERROR ENDPOINTS ************* //
 
 // Error for API
 app.use('/api/*', (req, res) => {
@@ -52,9 +46,9 @@ app.use('/api/*', (req, res) => {
 });
 
 // Error for HTML 
-// app.use(‘*’, (req, res) => {
-//     res.send(‘<h2>Error 404: Not Found</h2>’);
-//   });
+app.use(`*`, (req, res) => {
+    res.send(`<h2>Error 404: Not Found</h2>`);
+});
 
 /***********************************
 * START SERVER *
