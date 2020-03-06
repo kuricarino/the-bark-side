@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-// mongoose.connect("mongodb://localhost:27017/trails-api", {useNewUrlParser: true, useFindAndModify: false});
 const db = require('./models');
 
 const trails = [
@@ -55,35 +54,12 @@ db.Trail.deleteMany({}, (err, delTrails) => {
   if (err) console.log('can"t delete trails', err);
   db.Trail.create(trails, (err, newTrails) => {
     if (err) console.log(`can't create new trails`);
-    // console.log(newTrails);  -- DELETE LATER
     for (let i = 0; i < newTrails.length; i ++) {
         db.Post.create(posts[i], (err, savedPost) => {
           if (err) console.log(err);
           newTrails[i].posts.push(savedPost);
           newTrails[i].save();
-          // console.log(newTrails[i]);  -- DELETE LATER
         });
     };
   });
 });
-
-
-//  FOR CREATING NEW POSTS - NOT COMPLETE
-
-    // db.Post.deleteMany({}, (err, delPosts) => {
-    //   if (err) console.log('can"t delete posts', err);
-    //   console.log(delPosts);
-    //   trails.forEach(postData => {
-    //     const post = new db.Post({
-    //       title: postData.title,
-    //       description: postData.description},
-     
-    //       post.save((err, savedPost) => {
-    //         if (err) console.log('can"t save posts', err);
-    //         console.log(savedPost);
-    //       })
-    //       )
-    //     ;
-      
-    //   })
-    // })

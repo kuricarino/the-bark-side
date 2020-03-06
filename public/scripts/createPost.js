@@ -1,8 +1,6 @@
 // ============= INDEX POST ON PAGE LOAD =============//
 
 const postsContainer = document.querySelector('.le-scroll-box');
-// const title = document.querySelector('#ff-post-title').value;
-// const description = document.querySelector('#ff-message-text').value;
 
 function allPosts() {
   fetch('/api/trails/le')
@@ -19,6 +17,7 @@ function renderAll(trail) {
   })
 }
 allPosts();
+
 
 // ============= CREATE ONE POST FUNCTION ON MODAL =============//
 
@@ -38,13 +37,10 @@ function createPost(event) {
       })
       .then(stream => stream.json())
       .then(res => render(newPost))
-      // .then(res => render(res))
-      // .then(res => res.text())
       .catch(err => console.log(err))
 }
 
 function render(post) {
-  // console.log(post);
   postsContainer.insertAdjacentHTML('afterbegin', getPostTemplate(post))
 }
 
@@ -60,14 +56,11 @@ function getPostTemplate(post) {
     `;
 }
 
+
 // ============= DELETE ONE POST ============= //
 
 document.querySelector('.le-scroll-box').addEventListener('click', (event) => {
   if (event.target.classList.contains("del")) delPost(event);
-  // else if (event.target.classList.contains("upd")) {
-  //   console.log('hi');
-    // updPost(event);
-  // }
 });
 
 function delPost(event) {
@@ -81,12 +74,10 @@ function delPost(event) {
 
 
 // ============= UPDATE ONE POST ============= //
+
 document.querySelector('.le-scroll-box').addEventListener('click', (event) => {
   if (event.target.classList.contains("upd")) {
-    console.log('hi');
-    console.log(event.target.parentNode.dataset.id);
     const postId = event.target.parentNode.dataset.id;
-    console.log(postId);
     window.location.replace(`/trails/le/posts/${postId}/updates`);
   }
 });
