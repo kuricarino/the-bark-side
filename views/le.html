@@ -9,21 +9,24 @@
 <!-- Main CSS -->
   <link rel="stylesheet" type="text/css" href="/styles/le-styles.css">
   <script defer src="/scripts/createPost.js"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Kalam&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
   <title>The Bark Side</title>
 </head>
 
 <body>
 <!-- NAV BAR -->
   <div id="nav">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="/">Trails Home</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand" href="/"><img src="https://img.icons8.com/emoji/48/000000/paw-prints.png">Home</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"    aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Difficulty Level</a>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Difficulty</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="http://localhost:5000/trails/ff">Easy</a>
               <a class="dropdown-item" href="http://localhost:5000/trails/le">Moderate</a>
@@ -31,26 +34,83 @@
             </div>
           </li>
         </ul>
-        <button type="button" class="btn btn-success" data-toggle="button" aria-pressed="false">Log In</button>
-        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false">Sign Up</button>
+        <div class="text-center">
+          <a href="" class="btn btn-default btn-rounded" data-toggle="modal" data-target="#darkModalForm">Sign Up</a>
+        </div>
       </div>  
-    </nav>
+    </nav> 
   </div> 
 
+<!-- Sign Up Modal -->
+  <div class="modal fade" id="darkModalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+    <div class="modal-dialog form-dark" role="document">
+      <div class="modal-content card card-image" style="background-image: url('/images/paws.jpeg');">
+        <div class="text-white rgba-stylish-strong py-5 px-5 z-depth-4">
+          <div class="modal-header text-center pb-4">
+            <h3 class="modal-title w-100 white-text" id="myModalLabel">SIGN <a
+                class="green-text font-weight-bold">UP</a></h3>
+            <button type="button" class="close white-text" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="md-form mb-5">
+              <input type="email" id="Form-email5" class="form-control validate white-text" placeholder="Your email">
+              <label data-error="wrong" data-success="right" for="Form-email5"></label>
+            </div>
+            <div class="md-form pb-3">
+              <input type="password" id="Form-pass5" class="form-control validate white-text" placeholder="Your password">
+              <label class="login" data-error="wrong" data-success="right" for="Form-pass5"></label>
+              <div class="form-group mt-4">
+                <input class="form-check-input" type="checkbox" id="checkbox624">
+                <label for="checkbox624" class="white-text form-check-label">Accept the<a href="#" class="green-text font-weight-bold">
+                    Terms and Conditions</a></label>
+              </div>
+            </div>
+            <div class="row d-flex align-items-center mb-4">
+              <div class="text-center mb-3 col-md-12">
+                <button type="button" class="btn btn-success btn-block btn-rounded z-depth-1">Sign up</button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <p class="font-small white-text d-flex justify-content-end">Have an account? <a href="#" class="green-text ml-1 font-weight-bold">
+                    Log in</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Sign Up Modal END -->
 
+<!-- Specs & Carousel in one CONTAINER -->
   <div class="container">
       <div class="card border-0 shadow my-5">
         <div class="card-body p-5">
           <h1 class="font-weight-light">Lands End Trail</h1>
           <p class="lead">
               <ul class="specs">
-                
                 <li><img src="/images/roadicon.png" alt="distance" class="i-distance">3.4 miles</li>
-                <li>Difficulty: Moderate</li>
-                <li>Route type: Loop</li>
+                <li>Level: 
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                    width="50" height="50"
+                    viewBox="0 0 172 172"
+                    style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#2ecc71"><path d="M59.125,18.8125c-9.675,0 -17.46875,9.675 -17.46875,21.5c0,11.825 7.79375,21.5 17.46875,21.5c9.675,0 17.46875,-9.675 17.46875,-21.5c0,-11.825 -7.79375,-21.5 -17.46875,-21.5zM112.875,18.8125c-9.675,0 -17.46875,9.675 -17.46875,21.5c0,11.825 7.79375,21.5 17.46875,21.5c9.675,0 17.46875,-9.675 17.46875,-21.5c0,-11.825 -7.79375,-21.5 -17.46875,-21.5zM24.1875,64.5c-9.675,0 -17.46875,9.675 -17.46875,21.5c0,11.825 7.79375,21.5 17.46875,21.5c9.675,0 17.46875,-9.675 17.46875,-21.5c0,-11.825 -7.79375,-21.5 -17.46875,-21.5zM147.8125,64.5c-9.675,0 -17.46875,9.675 -17.46875,21.5c0,11.825 7.79375,21.5 17.46875,21.5c9.675,0 17.46875,-9.675 17.46875,-21.5c0,-11.825 -7.79375,-21.5 -17.46875,-21.5zM86,78.87708c-7.525,0 -14.37917,3.76302 -18.5448,9.94427l-15.31665,22.9776c-4.56875,6.9875 -5.1073,15.45313 -1.07605,22.84375c3.89688,7.39063 11.28697,11.82605 19.61822,11.82605h30.63855c8.33125,0 15.72135,-4.43542 19.61822,-11.82605c3.89688,-7.39063 3.4927,-15.85625 -1.07605,-22.84375l-15.31665,-22.9776c-4.16562,-6.18125 -11.0198,-9.94427 -18.5448,-9.94427z"></path></g></g></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                    width="50" height="50"
+                    viewBox="0 0 172 172"
+                    style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#2ecc71"><path d="M59.125,18.8125c-9.675,0 -17.46875,9.675 -17.46875,21.5c0,11.825 7.79375,21.5 17.46875,21.5c9.675,0 17.46875,-9.675 17.46875,-21.5c0,-11.825 -7.79375,-21.5 -17.46875,-21.5zM112.875,18.8125c-9.675,0 -17.46875,9.675 -17.46875,21.5c0,11.825 7.79375,21.5 17.46875,21.5c9.675,0 17.46875,-9.675 17.46875,-21.5c0,-11.825 -7.79375,-21.5 -17.46875,-21.5zM24.1875,64.5c-9.675,0 -17.46875,9.675 -17.46875,21.5c0,11.825 7.79375,21.5 17.46875,21.5c9.675,0 17.46875,-9.675 17.46875,-21.5c0,-11.825 -7.79375,-21.5 -17.46875,-21.5zM147.8125,64.5c-9.675,0 -17.46875,9.675 -17.46875,21.5c0,11.825 7.79375,21.5 17.46875,21.5c9.675,0 17.46875,-9.675 17.46875,-21.5c0,-11.825 -7.79375,-21.5 -17.46875,-21.5zM86,78.87708c-7.525,0 -14.37917,3.76302 -18.5448,9.94427l-15.31665,22.9776c-4.56875,6.9875 -5.1073,15.45313 -1.07605,22.84375c3.89688,7.39063 11.28697,11.82605 19.61822,11.82605h30.63855c8.33125,0 15.72135,-4.43542 19.61822,-11.82605c3.89688,-7.39063 3.4927,-15.85625 -1.07605,-22.84375l-15.31665,-22.9776c-4.16562,-6.18125 -11.0198,-9.94427 -18.5448,-9.94427z"></path></g></g></svg>
+                </li>
+                <li>Route type: <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                  width="50" height="50"
+                  viewBox="0 0 172 172"
+                  style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#2ecc71"><path d="M114.66667,22.93333v17.2h-68.8c-18.92932,0 -34.4,15.47068 -34.4,34.4c-0.02924,2.06765 1.05709,3.99087 2.843,5.03322c1.78592,1.04236 3.99474,1.04236 5.78066,0c1.78592,-1.04236 2.87225,-2.96558 2.843,-5.03322c0,-12.73015 10.20319,-22.93333 22.93333,-22.93333h68.8v17.2l40.13333,-22.93333zM154.71042,91.65495c-3.16203,0.04943 -5.68705,2.6496 -5.64375,5.81172c0,12.73015 -10.20318,22.93333 -22.93333,22.93333h-68.8v-17.2l-40.13333,22.93333l40.13333,22.93333v-17.2h68.8c18.92932,0 34.4,-15.47068 34.4,-34.4c0.02122,-1.54972 -0.58581,-3.04203 -1.68279,-4.1369c-1.09698,-1.09487 -2.59045,-1.69903 -4.14013,-1.67482z"></path></g></g></svg></li>
               </ul>
           </p>
-            <!-- CAROUSEL -->
+        <!-- Carousel START -->
           <div id="le-carousel"> 
               <div id="carouselExampleControls" class="carousel slide" data-ride="false">
                 <div class="carousel-inner">
@@ -75,9 +135,8 @@
               </div>
           </div>
 
-            <!--Leash Map START -->
-          <button type="button" class="mapbtn btn-primary" data-toggle="modal" data-target="#myModal ">Leash Map</button>
-
+          <!--Leash Map START --> 
+          <button type="button" class="mapbtn btn-outline-success" data-toggle="modal" data-target="#myModal ">Leash Map</button>
           <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
@@ -88,77 +147,63 @@
             </div>
           </div>
 
-        <!--Leash Map END -->
-
-    <!-- <p> -->
-      <button id="descriptionbtn" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-        Click for description
-      </button>
-    <!-- </p> -->
-    <div class="trail-descrptn">
-    <div class="collapse" id="collapseExample">
-      <div class="card card-body">
-          <div class="trail-descrptn">
+        <!-- Trail Description START -->
+        <button id="descriptionbtn" class="btn btn-outline-info" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          Click for description
+        </button>
+        <div class="trail-descrptn">
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                <div class="trail-descrptn">
                   <p>
                     <strong>Popular uses</strong>: hiking, walking, running, nature trips. <br><br>
                     <strong>Description</strong>: Located on the wildest, rockiest corner of San Francisco, Lands End Trail features beautiful wild flowers and offers brilliant views of the Pacific. At the tip of Lands End is Point Lobos, named by the Spanish for its many lobos marinos (sea wolves), trails at Lands End offer a cliff-top walk through dark cypress and open grass and 30-mile views up and down the California coast. The trail is accessible year-round. Dogs must be kept on leash at all times.
-                  <br>
-                  
                   </p>
                 </div>
-    </div>
-  </div>
-  </div>
-           
-        
-    <!-- Posts Modal START -->
-<div class="post-button">
-    <button type="button" class="sharebtn btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Share your experience!</button>
-
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-body">
-            <form id="ff-form">
-              <div class="form-group">
-                <label class="col-form-label">Title:</label>
-                <input type="text" class="form-control" id="le-post-title">
-              </div>
-              <div class="form-group">
-                <label class="col-form-label">Post:</label>
-                <textarea class="form-control" id="le-post-comment"></textarea>
-              </div>
-            </form>
+            </div>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" id="submit-post" href="/scripts/createPost.js">Submit</button>
+        
+        <!-- Posts Modal START -->
+        <div class="post-button">
+          <button type="button" class="sharebtn btn btn-outline-success" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Share your experience!</button>
+
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <form id="ff-form">
+                    <div class="post-form-group">
+                      <label class="post-col-form-label">From: </label><br>
+                      <input type="text" class="form-control" id="le-post-title">
+                      <br><br>
+                    </div>
+                    <div class="post-form-group">
+                      <label class="post-col-form-label">Post: </label><br>
+                      <textarea class="form-control" id="le-post-comment" rows="8"></textarea>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" data-dismiss="modal" id="submit-post" href="/scripts/createPost.js">Submit</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+
+        <!-- Posts Container Scroll Box START -->
+        <div class="le-scroll-box">
+        </div>
+
+        <div style="height: 700px"></div>
       </div>
     </div>
   </div>
-<!-- Posts Modal END -->
-
-<!-- Posts Scroll Box  START -->
-<div class="le-scroll-box">
-   
-</div>
-
-
-
-
-          <div style="height: 700px"></div>
-          <p class="lead mb-0">You've reached the end!</p>
-        </div>
-    </div>
-  </div>
-
-
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  </body>
-  </html>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
