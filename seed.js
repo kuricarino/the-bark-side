@@ -8,7 +8,7 @@ const trails = [
   distance: '2 miles',
   difficulty: 'Easy',
   routeType: 'Loop',
-  description: 'Fort Funston features beaufiful wild flowers, 200 foot high sandy bluffs on San Francisco"s SW coast where the winds blow reliably wildly. A network of trails make it ideal for hiking and horseback riding, and is good for all skill levels. This trail is moderately trafficed, accessible year-round and dog owners will be happy to know they can take leashes off here.',
+  description: 'Fort Funston features beaufiful wild flowers, 200 foot high sandy bluffs on San Francisco"s SW coast where the winds blow reliably wildly. A network of trails make it ideal for hiking and horseback riding, and is good for all skill levels. This trail is moderately trafficked, accessible year-round and dog owners will be happy to know they can take leashes off here.',
   uses: ['hiking', 'walking', 'nature trips', 'bird watching'],
   image: '#'
 },

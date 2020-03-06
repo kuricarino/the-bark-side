@@ -3,7 +3,7 @@
 const postsContainer = document.querySelector('.le-scroll-box');
 
 function allPosts() {
-  fetch('/api/trails/le')
+  fetch('/api/trails/ff')
   .then(stream => stream.json()) 
   .then((res) => {
     console.log(res);
@@ -24,11 +24,11 @@ allPosts();
 document.querySelector('#submit-post').addEventListener('click', createPost);
 
 function createPost(event) {
-  const title = document.querySelector('#le-post-title').value;
-  const description = document.querySelector('#le-post-comment').value;  
+  const title = document.querySelector('#ff-post-title').value;
+  const description = document.querySelector('#ff-post-comment').value;  
   const newPost = {title, description};
 
-  fetch('/api/trails/le/posts', {
+  fetch('/api/trails/ff/posts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -64,7 +64,7 @@ document.querySelector('.le-scroll-box').addEventListener('click', (event) => {
 });
 
 function delPost(event) {
-  fetch(`/api/trails/le/posts/${event.target.parentNode.dataset.id}`, {
+  fetch(`/api/trails/ff/posts/${event.target.parentNode.dataset.id}`, {
     method: 'DELETE'
   })
   .then(stream => stream.json())
@@ -78,7 +78,7 @@ function delPost(event) {
 document.querySelector('.le-scroll-box').addEventListener('click', (event) => {
   if (event.target.classList.contains("upd")) {
     const postId = event.target.parentNode.dataset.id;
-    window.location.replace(`/trails/le/posts/${postId}/updates`);
+    window.location.replace(`/trails/ff/posts/${postId}/updates`);
   }
 });
 

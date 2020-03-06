@@ -16,6 +16,30 @@
 </head>
 
 <body>
+<!-- Nav Bar -->
+  <div id="nav">
+    <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand" href="/"><img src="https://img.icons8.com/emoji/48/000000/paw-prints.png">Home</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Difficulty Level</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="http://localhost:5000/trails/ff">Easy</a>
+              <a class="dropdown-item" href="http://localhost:5000/trails/le">Moderate</a>
+              <a class="dropdown-item" href="http://localhost:5000/trails/mp">Hard</a>
+            </div>
+          </li>
+        </ul>
+        <div class="text-center">
+          <a href="" class="btn btn-default btn-rounded" data-toggle="modal" data-target="#darkModalForm">Sign Up</a>
+        </div>
+      </div>  
+    </nav> 
+  </div> 
 <!-- Sign Up Modal -->
   <div class="modal fade" id="darkModalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
     aria-hidden="true">
