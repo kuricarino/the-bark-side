@@ -7,7 +7,7 @@ document.querySelector('#form-update').addEventListener('submit', (update));
 function update(event) {
   event.preventDefault();
   const title = document.querySelector('#post-title').value;
-  const description = document.querySelector('#post-body').value;
+  const description = document.querySelector('#post-description').value;
   const updPost = {title, description};
 
   fetch(`/api/trails/le/posts/${postId}/updates`, {
