@@ -31,9 +31,18 @@ Users can read, create and edit their experiences through posts.
 
 **Planned Features**
 
-* Incorporate Google Maps API
+* Incorporate Google Maps API to show location of trails
 * Login authorization
+* Distance and elevation tracker (example below)
+
+<img src="public/images/stretch.jpeg">
 
 **Screenshot(s)**
 
 <img src="public/images/bark-side-frontpage.png">
+
+<img src="public/images/wiframe0.png">
+
+<img src="public/images/wiframe1.png">
+
+<img src="public/images/wiframe.png">

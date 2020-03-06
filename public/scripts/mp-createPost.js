@@ -5,10 +5,7 @@ const postsContainer = document.querySelector('.le-scroll-box');
 function allPosts() {
   fetch('/api/trails/mp')
   .then(stream => stream.json()) 
-  .then((res) => {
-    console.log(res);
-    renderAll(res)
-});
+  .then((res) => renderAll(res));
 }
 
 function renderAll(trail) {
@@ -17,7 +14,6 @@ function renderAll(trail) {
   })
 }
 allPosts();
-
 
 // ============= CREATE ONE POST FUNCTION ON MODAL =============//
 
@@ -47,15 +43,14 @@ function render(post) {
 function getPostTemplate(post) {
     return`
     <div class="postbox" data-id=${post._id}>
-      <p>From: ${post.title}</p>
-      <p>Comment: ${post.description}</p>
+      <p><b><big>From:</b></big> ${post.title}</p>
+      <p><b><big>Comment:</b></big> ${post.description}</p>
       <button class="upd btn btn-outline-warning">Update</button>
       <button class="del btn btn-outline-danger">Delete</button>
       <p>-------------------------------------------------------------------------------------------------------</p>
     </div>
     `;
 }
-
 
 // ============= DELETE ONE POST ============= //
 
@@ -71,7 +66,6 @@ function delPost(event) {
   .catch(err => console.log(err))
   event.target.parentNode.remove();
 };
-
 
 // ============= UPDATE ONE POST ============= //
 
