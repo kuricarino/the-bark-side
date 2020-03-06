@@ -1,0 +1,122 @@
+body, html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background-color: lightslategrey;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+
+  background: url(../images/sf.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+#nav {
+  background-color: transparent;
+}
+ 
+.navbar-brand {
+  font-size: 2vh;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-text-fill-color: rgb(94, 186, 174);
+}
+
+#navbarDropdown {
+  background-blend-mode: lighten;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-text-fill-color: rgb(94, 186, 174);
+}
+
+#main {
+  display: flex;
+  text-align: left;
+  -webkit-text-fill-color: rgb(94, 186, 174);
+  margin-top: 8vh;
+  margin-left: 5vh;
+}
+
+.dropdown-menu {
+  background-color: transparent;
+  border: transparent;
+  -webkit-text-fill-color: rgb(94, 186, 174);
+}
+
+.dropdown-item {
+  -webkit-text-fill-color: rgb(94, 186, 174);
+}
+
+.dropdown-item:hover {
+  background-color: transparent;
+  border-left: 1px dotted black;
+}
+
+h1 {
+  font-size: 10vh;
+  font-family: 'Kalam', cursive;
+  font-weight: bold;
+  letter-spacing: 1vh;
+}
+
+h2 {
+  font-size: 5vh;
+  font-family: 'Kalam', cursive;
+  background: -webkit-linear-gradient(#5ebaae, #486461);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Sign Up Modal */
+
+.btn {
+  margin: 0 1vh;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2vh;
+  font-weight: bolder;
+  -webkit-text-fill-color: rgb(72, 100, 97);
+}
+
+.modal-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 5vh;
+  font-weight: bolder;
+  -webkit-text-fill-color: rgba(72, 100, 97, 0.7);
+  margin-left: 2vh;
+  margin-top: 6vh;
+}
+
+.form-check-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2vh;
+  -webkit-text-fill-color: rgb(72, 100, 97);
+}
+
+#Form-pass5 {
+  margin-top: 1px;
+}
+
+.form-group {
+  font-family: 'Montserrat', sans-serif;
+  margin-left: 3vh;
+}
+
+.font-small {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3vh;
+  -webkit-text-fill-color: rgb(72, 100, 97);
+  margin-top: 3.5vh;
+}
+
+label {
+  position: absolute;
+}
+
+.btn-success {
+  margin-top: 28vh;
+}

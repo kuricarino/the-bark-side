@@ -1,0 +1,76 @@
+body {
+    background: url(../images/mtn.jpeg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+/* nav bar */
+#nav {
+    background-color: transparent;
+}
+
+.navbar-brand {
+    font-size: 2vh;
+    font-family: 'Montserrat', sans-serif;
+    -webkit-text-fill-color: rgb(25, 76, 214);
+}
+
+#navbarDropdown {
+    background-blend-mode: lighten;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    -webkit-text-fill-color: rgb(25, 76, 214);
+}
+
+.dropdown-menu {
+    background-color: transparent;
+    border: transparent;
+    -webkit-text-fill-color: rgb(25, 76, 214);
+}
+
+.dropdown-item {
+    -webkit-text-fill-color: rgb(25, 76, 214);
+}
+
+.dropdown-item:hover {
+    background-color: transparent;
+    border-left: 1px dotted black;
+}
+
+/* form */
+h1 {
+    font-size: 5vh;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1vh;
+    text-align: center;
+    -webkit-text-fill-color: rgb(25, 76, 214);
+}
+
+label {
+    font-family: 'Montserrat', sans-serif;
+}
+
+#title-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#update-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#post-title {
+    margin-bottom: 3vh;
+}
+
+#post-body {
+    margin-bottom: 3vh;
+}

@@ -1,0 +1,182 @@
+body {
+  background: url('https://source.unsplash.com/twukN12EN7c/1920x1080') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+.navbar-brand {
+  font-size: 25px;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-text-fill-color: rgb(25, 76, 214);
+}
+
+#navbarDropdown {
+  background-blend-mode: lighten;
+  font-size: 23px;
+  color: blue;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-text-fill-color: rgb(25, 76, 214);
+}
+
+/* Sign up Button START */
+.btn {
+  margin: 0 1vh;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2vh;
+  font-weight: bolder;
+  -webkit-text-fill-color: rgb(72, 100, 97);
+}
+
+.modal-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 5vh;
+  font-weight: bolder;
+  -webkit-text-fill-color: rgba(72, 100, 97, 0.7);
+  margin-left: 2vh;
+  margin-top: 6vh;
+}
+
+.form-check-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2vh;
+  -webkit-text-fill-color: rgb(72, 100, 97);
+}
+
+#Form-pass5 {
+  margin-top: 1px;
+}
+
+.form-group {
+  font-family: 'Montserrat', sans-serif;
+  margin-left: 3vh;
+}
+
+.font-small {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3vh;
+  -webkit-text-fill-color: rgb(72, 100, 97);
+  margin-top: 3.5vh;
+}
+
+label {
+  position: absolute;
+}
+
+.btn-success {
+  margin-top: 28vh;
+}
+/* Sign up Button END */
+
+h1 {
+  font-family: 'Kalam', cursive;
+  font-size: 60px;
+}
+
+.card-body.p-5 {
+  background-color: rgba(255, 255, 255, 0.685) !important;
+ padding-top: 10px;
+  display: flex;
+  width: 100%;
+  height: auto;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+font-family: 'Montserrat', sans-serif;
+}
+
+.i-distance {
+  width: 50px;
+  height: 50px;
+  padding-right: 20px;
+}
+
+li {
+  font-size: 25px;
+  display: inline-block;
+  padding-right: 80px;
+}
+
+.carousel {
+  width: 80%;
+  height: 50%;
+  margin: 0 auto;
+  padding: 3px 10px;
+  position: relative;
+  background-color: lightgrey;
+  border-radius: 3%;
+}
+
+.trail-descrptn {  /*  div to contain the description after expanded  */
+  position: relative;
+  top: 35px;
+  margin: 0 auto;
+  width: 90%;
+  
+}
+.card-body {   /*  Trail Description box - overriding Bootstrap  */
+  padding: 0px;
+  border: none;
+}
+#descriptionbtn {
+  position: relative;
+  margin: 0 auto;
+  top: 30px;
+  left: -300px; 
+  border-radius: 57px;
+}
+
+.img-responsive {
+  width: 180%;
+  height: 180%;
+}
+
+.modal-content {
+  background-color: rgb(11, 143, 219);
+  font: white;
+  width: auto;
+  height: 30%;
+}
+
+.mapbtn {
+  position: absolute;
+  top: 880px;
+  left: 450px;
+  height: 40px;
+  width: 180px;
+  border-radius: 68px;
+   background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+}
+
+.col-form-label {  /* "Share" modal content - overriding BS */
+  color: white;
+  font-weight: bolder;
+}
+.sharebtn {
+  position: absolute;
+  top: -42px;
+  right: 60px;
+  border-radius: 82px;
+}
+
+.postbtn {
+  color: black;
+}
+
+.le-scroll-box {
+  border: 2px solid black;
+  height: 60%; /* maximum height of the box */
+  width: 90%;
+  position: absolute;
+  left: 40px;
+  bottom: 140px;
+  padding: 15px;
+  overflow-y: scroll;
+}
+
+#ff-form {
+ height: 350px;
+}

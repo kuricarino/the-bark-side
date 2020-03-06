@@ -1,5 +1,6 @@
 # Project-1-Collab-SF-Trails
-***NorCal Coastal Trails***
+**SF: The Bark Side**
+**You + Dog + Nature**
 
 **App Name**
 
@@ -24,10 +25,15 @@ We love nature and we love dogs, and we want to provide a useful resource for ot
 * Frontend: HTML, CSS, JavaScript, Bootstrap
 * Backend: Express API, AJAX, jQuery, MongoDB
 
-***Existing Features***
-*What features does your app have? (bullet points)*
+**Existing Features**
 
-***Planned Features***
-*What changes would you make to your project if you continue to work on it? (bullet points)*
+Users can read, create and edit their experiences through posts. 
 
-***Screenshot(s) (optional)***
+**Planned Features**
+
+* Incorporate Google Maps API
+* Login authorization
+
+**Screenshot(s)**
+
+<img src="public/images/bark-side-frontpage.png">

@@ -4,15 +4,17 @@ const db = require('./models');
 const trails = [
 {
   name: 'Fort Funston Trail',
+  nickname: 'ff',
   distance: '2 miles',
   difficulty: 'Easy',
   routeType: 'Loop',
-  description: 'Fort Funston features beaufiful wild flowers, 200 foot high sandy bluffs on San Francisco"s SW coast where the winds blow reliably wildly. A network of trails make it ideal for hiking and horseback riding, and is good for all skill levels. This trail is moderately trafficed, accessible year-round and dog owners will be happy to know they can take leashes off here.',
+  description: 'Fort Funston features beaufiful wild flowers, 200 foot high sandy bluffs on San Francisco"s SW coast where the winds blow reliably wildly. A network of trails make it ideal for hiking and horseback riding, and is good for all skill levels. This trail is moderately trafficked, accessible year-round and dog owners will be happy to know they can take leashes off here.',
   uses: ['hiking', 'walking', 'nature trips', 'bird watching'],
   image: '#'
 },
 {
   name: 'Lands End Trail',
+  nickname: 'le',
   distance: '3.4 miles',
   difficulty: 'Moderate',
   routeType: 'Loop',
@@ -22,6 +24,7 @@ const trails = [
 },
 {
   name: 'Mori Point and Sweeney Ridge Loop Trail',
+  nickname: 'mp',
   distance: '9.4 miles',
   difficulty: 'Hard',
   routeType: 'Loop',
@@ -31,15 +34,32 @@ const trails = [
 }];
 
 
-// WIll need to remove or update later
 const posts = [
   {
-    title: 'test',
-    description: 'test test'
+    title: 'Fort Funston 1',
+    description: 'test ff',
+  },
+  {
+    title: 'Lands End 1',
+    description: 'test le',
+  },
+  {
+    title: 'Mori Point 1',
+    description: 'test mp',
   }
 ]
 
-module.exports = {
-  trails,
-  posts
-}
+// Clearing all previous trails so we can load trails from database
+db.Trail.deleteMany({}, (err, delTrails) => {
+  if (err) console.log('can"t delete trails', err);
+  db.Trail.create(trails, (err, newTrails) => {
+    if (err) console.log(`can't create new trails`);
+    for (let i = 0; i < newTrails.length; i ++) {
+        db.Post.create(posts[i], (err, savedPost) => {
+          if (err) console.log(err);
+          newTrails[i].posts.push(savedPost);
+          newTrails[i].save();
+        });
+    };
+  });
+});

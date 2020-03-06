@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- Main CSS -->
+  <link rel="stylesheet" type="text/css" href="/styles/styles.css">
+  <script defer src="/scripts/index-html.js"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Kalam&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+  <title>🌲Home</title>
+</head>
+
+<body>
+<!-- Nav Bar -->
+  <div id="nav">
+    <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand" href="/"><img src="https://img.icons8.com/emoji/48/000000/paw-prints.png">Home</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Difficulty Level</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="http://localhost:5000/trails/ff">Easy</a>
+              <a class="dropdown-item" href="http://localhost:5000/trails/le">Moderate</a>
+              <a class="dropdown-item" href="http://localhost:5000/trails/mp">Hard</a>
+            </div>
+          </li>
+        </ul>
+        <div class="text-center">
+          <a href="" class="btn btn-default btn-rounded" data-toggle="modal" data-target="#darkModalForm">Sign Up</a>
+        </div>
+      </div>  
+    </nav> 
+  </div> 
+<!-- Sign Up Modal -->
+  <div class="modal fade" id="darkModalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog form-dark" role="document">
+      <div class="modal-content card card-image" style="background-image: url('/images/paws.jpeg');">
+        <div class="text-white rgba-stylish-strong py-5 px-5 z-depth-4">
+          <div class="modal-header text-center pb-4">
+            <h3 class="modal-title w-100 white-text" id="myModalLabel">SIGN <a
+                class="green-text font-weight-bold">UP</a></h3>
+            <button type="button" class="close white-text" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="md-form mb-5">
+              <input type="email" id="Form-email5" class="form-control validate white-text" placeholder="Your email">
+              <label data-error="wrong" data-success="right" for="Form-email5"></label>
+            </div>
+
+            <div class="md-form pb-3">
+              <input type="password" id="Form-pass5" class="form-control validate white-text" placeholder="Your password">
+              <label class="login" data-error="wrong" data-success="right" for="Form-pass5"></label>
+              <div class="form-group mt-4">
+                <input class="form-check-input" type="checkbox" id="checkbox624">
+                <label for="checkbox624" class="white-text form-check-label">Accept the<a href="#" class="green-text font-weight-bold">
+                    Terms and Conditions</a></label>
+              </div>
+            </div>
+            <div class="row d-flex align-items-center mb-4">
+              <div class="text-center mb-3 col-md-12">
+                <button type="button" class="btn btn-success btn-block btn-rounded z-depth-1">Sign up</button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <p class="font-small white-text d-flex justify-content-end">Have an account? <a href="#" class="green-text ml-1 font-weight-bold">
+                    Log in</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Modal -->
+
+  <div id="main">
+    <div class="col-lg-8">
+      <p>
+        <h1>SF: The Bark Side</h1>
+        <h2>You + Dog + Nature</h2>
+      </p>
+    </div>
+  </div>
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
